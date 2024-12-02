@@ -1,5 +1,4 @@
 
-
 // Arrays in JavaScript
 
 let mylist = ['Ahmet', 'Mehmet', 'Ali', 'Veli'];
