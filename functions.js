@@ -2,7 +2,6 @@
 
 // Function Declaration
 function greet(name) {
-  
   return `Hello, ${name}!`; // Returning a greeting message
 }
 // Calling the function and logging the result
@@ -10,16 +9,34 @@ console.log(greet("Alice")); // Output: Hello, Alice!
 // Use Case: Reusable code for a specific task.
 // Key Features: Hoisted (can be called before declaration).
 
+function personInfo(name, age, country) {
+  return "Name: " + name + ", Age: " + age + ", Country: " + country;
+}
+console.log(personInfo("Ahmet", 25, "Turkey"));
+
+function logInfo(userName, password) {
+  return "Username: " + userName + ", Password: " + password;
+}
+console.log(logInfo("AhmetA", "abc123456"));
 
 // Function Expression
 const greetExpression = function (name) {
-  
   return `Hello, ${name}!`; // Returning a greeting message
 };
 // Calling the function and logging the result
 console.log(greetExpression("Bob")); // Output: Hello, Bob!
 // Use Case: Dynamic assignment of functions or closures.
 // Key Features: Not hoisted.
+
+
+// console.log(personExpression("Ahmet")); // Output: ReferenceError : Cannot access 'personExpression' before initialization, 
+// personExpression is not defined yet.
+const personExpression = function (name) {
+    return "Name: " + name;
+};
+console.log(personExpression("Ahmet"));
+
+
 
 // Arrow Functions
 const greetArrow = (name) => `Hello, ${name}!`;
@@ -125,12 +142,11 @@ console.log(gen.next().value); // Output: First
 console.log(gen.next().value); // Output: Second
 // Use Case: Lazy iteration over data, asynchronous tasks.
 
-
 // Mocking fetch for testing purposes
 global.fetch = async (url) => {
   if (url === "https://api.example.com/data") {
     return {
-      json: async () => ({ message: "Mocked data" })
+      json: async () => ({ message: "Mocked data" }),
     };
   }
   throw new Error("Invalid URL");
