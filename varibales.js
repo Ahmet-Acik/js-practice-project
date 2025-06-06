@@ -1,167 +1,112 @@
 /**
- * Demonstrates variable declaration and usage in JavaScript.
+ * Comprehensive JavaScript Variable and Data Type Practice File
  * 
- * Variables are containers for storing data values. In JavaScript, we use the var, let, or const keyword to declare variables.
- * 
- * - var: It is the old way to declare variables in JavaScript. It is function-scoped.
- * - let: It is the new way to declare variables in JavaScript. It is block-scoped.
- * - const: It is the new way to declare variables in JavaScript. It is block-scoped. The value of a const variable cannot be changed through reassignment.
- * 
- * Examples:
- * - var name = 'Ahmet';
- * - let age = 25;
- * - const PI = 3.14;
- * 
- * Demonstrates different data types in JavaScript:
- * - String
- * - Number
- * - BigInt
- * - Boolean
- * - null
- * - undefined
- * - Symbol
- * 
- * Demonstrates object data type in JavaScript, which is a collection of key-value pairs.
- * 
- * Examples:
- * - let course = { name: 'JavaScript', duration: '3 months', isFree: true };
- * - course.name = 'React';
- * - console.log(course.name); // React
- * 
- * Demonstrates accessing and modifying object properties using dot notation and bracket notation.
+ * This file demonstrates best practices for variable declaration, usage, and data types in JavaScript.
+ * It avoids redeclaration errors and shows modern, clean usage.
  */
 
+// --- Variable Declarations ---
 
-Example:
-var name = 'Ahmet';
-console.log(name);
+// var: function-scoped, can be redeclared and updated (not recommended in modern JS)
+var userName = 'Ahmet';
+console.log(userName); // Ahmet
 
-var name = 'Mehmet';
+userName = 'Mehmet'; // updating is allowed
+console.log(userName); // Mehmet
 
-var age = 25;
-
-var age = 30;
-
-var name =20;
-
-var name =25;
-
-console.log(age);
-var isStudent = true;
-console.log(isStudent);
-var x = null;
-console.log(x);
-var y = undefined;
-console.log(y);
-var z = Symbol('example');
-console.log(z);
-
-
-// String,
-let name ='Ahmet'  // let is block scoped
-// let name =30 // SyntaxError: Identifier 'name' has already been declared
-console.log(name);
-
-// Number,
+// let: block-scoped, can be updated but not redeclared in the same scope
 let age = 25;
-console.log(age);
+console.log(age); // 25
 
-// BigInt,
-let bigNumber = 12345676233567890n;
-console.log(bigNumber);
+age = 30; // updating is allowed
+console.log(age); // 30
 
-// Boolean,
-let isStudent = true;
-console.log(isStudent);
-
-// null,
-let x = null;
-console.log(x);
-
-// undefined,
-let y = undefined;
-console.log(y);
-
-// Symbol,
-let z = Symbol('example');
-console.log(z);
-
-
-Example:
-let firstName = "Ahmet";
-let lastName = 'Korkmaz'; 
-
-let fullName = firstName + ' ' + lastName;
-
-console.log(fullName); // Ahmet Korkmaz
-
-// const keyword is used to declare a constant variable. 
-//The value of a const variable cannot be changed through reassignment.
+// const: block-scoped, cannot be updated or redeclared
 const PI = 3.14;
 console.log(PI); // 3.14
-const chrismas = '25.12.2021';
-console.log(chrismas); // 25.12.2021
-// chrismas = '25.12.2022'; // TypeError: Assignment to constant variable.
 
-const COLOUR = 'red';
-console.log(COLOUR); // red
+// const PI = 3.1415; // ❌ Error: Identifier 'PI' has already been declared
+// PI = 3.1415; // ❌ Error: Assignment to constant variable
 
+// --- Data Types ---
 
-let favouriteFood = 'Pizza';
-let favouriteFoods = "Hamburger"; 
+// String
+let firstName = "Ahmet";
+let lastName = 'Korkmaz';
+let fullName = `${firstName} ${lastName}`;
+console.log(fullName); // Ahmet Korkmaz
 
+// Number
 let number1 = 25;
 let number2 = 30;
+console.log(number1, number2); // 25 30
 
-let bigNumbers = 12345678901234567890n;
+// BigInt (for very large integers)
+let bigNumber = 12345678901234567890n;
+console.log(bigNumber); // 12345678901234567890n
 
-let isStudents = true;
+// Boolean
+let isStudent = true;
+console.log(isStudent); // true
 
-let nullm = null;
+// null (intentional absence of value)
+let emptyValue = null;
+console.log(emptyValue); // null
 
-let undefinedm = undefined;
+// undefined (variable declared but not assigned)
+let notAssigned;
+console.log(notAssigned); // undefined
 
-let symbolm = Symbol('example');
+// Symbol (unique and immutable value)
+let uniqueId = Symbol('id');
+console.log(uniqueId); // Symbol(id)
 
-console.log(favouriteFood);
-console.log(favouriteFoods);
-console.log(number1);
-console.log(number2);
-console.log(bigNumbers);
-console.log(isStudents);
-console.log(nullm);
-console.log(undefinedm);
-console.log(symbolm);
+// --- Object Data Type ---
 
-// Object data type in JavaScript is a collection of key-value pairs. 
-// we can access the property of an object using the dot notation or the bracket notation.
-
-let course ={
+// Object: collection of key-value pairs
+let course = {
     name: 'JavaScript',
     duration: '3 months',
     isFree: true
-}
-course.name = 'React'; // we can change the value of a property
-console.log(course.name); // React // we can access the property of an object using the dot notation
-course.duration = '4 months'; // we can change the value of a property
-console.log(course.duration); // 4 months
-course.isFree = false; // we can change the value of a property
-console.log(course['name']); // React  we can access the property of an object using the bracket notation
-console.log(course['duration']); // 4 months we can access the property of an object using the bracket notation
-console.log(course['isFree']); // false we can access the property of an object using the bracket notation
+};
 
+// Accessing and modifying properties
+course.name = 'React'; // dot notation
+console.log(course.name); // React
 
-let courseJS = {
-    name : 'JavaScript',
-    duration : '3 months',
-    isFree : true,
-}
+course['duration'] = '4 months'; // bracket notation
+console.log(course['duration']); // 4 months
 
-courseJS.name = 'React';
-console.log(courseJS.name);
-courseJS['duration'] = '4 months';
-console.log(courseJS['duration']);
+let property = 'isFree';
+course[property] = false; // using variable as property key
+console.log(course.isFree); // false
 
-let m = 'isFree';  // we can use a variable to access the property of an object
-courseJS[m] = false; // courseJS['isFree'] = false;
-console.log(courseJS[m]);  // false
+// --- Best Practices ---
+
+// Prefer 'let' and 'const' over 'var' for block scoping and to avoid hoisting issues
+// Use 'const' by default, only use 'let' if you need to reassign the variable
+// Use descriptive variable names
+
+// --- Example: All Data Types in One Place ---
+
+const exampleString = "Hello, World!";
+const exampleNumber = 42;
+const exampleBigInt = 9007199254740991n;
+const exampleBoolean = false;
+const exampleNull = null;
+let exampleUndefined; // undefined by default
+const exampleSymbol = Symbol("desc");
+const exampleObject = { key: "value" };
+
+console.log(
+    exampleString,
+    exampleNumber,
+    exampleBigInt,
+    exampleBoolean,
+    exampleNull,
+    exampleUndefined,
+    exampleSymbol,
+    exampleObject
+);
+
+// --- End of Practice File ---

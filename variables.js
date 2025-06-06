@@ -187,3 +187,23 @@ function myFunction() {
 // console.log(a); // ReferenceError: x is not defined
 // console.log(y); // ReferenceError: y is not defined
 // console.log(z); // ReferenceError: z is not defined
+
+// Example of using readline to get user input in Node.js
+// This code demonstrates how to use the readline module in Node.js to get user input from the console.
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question("Enter your name: ", (userInput) => {
+  console.log(`Hello, ${userInput}!`);
+  readline.question("Enter your age: ", (userAge) => {
+    let ageInput = Number(userAge);
+    console.log(`You are ${ageInput} years old.`);
+    readline.question("Are you a student? (yes/no): ", (isStudentInput) => {
+      let isStudentReplay = isStudentInput.toLowerCase() === "yes";
+      console.log(`Is student: ${isStudentReplay}`);
+      readline.close();
+    });
+  });
+});
