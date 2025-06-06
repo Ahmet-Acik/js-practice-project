@@ -108,5 +108,69 @@ console.log(
     exampleSymbol,
     exampleObject
 );
-
-// --- End of Practice File ---
+// Output: Hello, World! 42 9007199254740991 false null undefined Symbol(desc) { key: 'value' }
+// Arrow function example
+const greet = (name) => {
+    console.log(`Hello, ${name}!`);
+};
+greet("Alice"); // Output: Hello, Alice!
+// Arrow function with implicit return
+const add = (a, b) => a + b;
+console.log(add(5, 3)); // Output: 8
+// Function with default parameters
+const multiply = (a, b = 1) => {
+    return a * b;
+};
+console.log(multiply(5)); // Output: 5 (b defaults to 1)
+// Function with rest parameters
+const sum = (...numbers) => {
+    return numbers.reduce((acc, num) => acc + num, 0);
+};
+console.log(sum(1, 2, 3, 4)); // Output: 10
+// Function with destructuring parameters
+const displayUser = ({ name, age }) => {
+    console.log(`Name: ${name}, Age: ${age}`);
+};
+displayUser({ name: "Alice", age: 30 }); // Output: Name: Alice, Age: 30
+// Function with callback
+const processNumbers = (numbers, callback) => {
+    return numbers.map(callback);
+};
+const doubledNumbers = processNumbers([1, 2, 3], (num) => num * 2);
+console.log(doubledNumbers); // Output: [2, 4, 6]
+// Function with promise
+const fetchData = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Data fetched successfully!");
+        }, 1000);
+    });
+};
+fetchData().then((data) => {
+    console.log(data); // Output: Data fetched successfully!
+});
+// Function with async/await
+const fetchDataAsync = async () => {
+    const data = await fetchData();
+    console.log(data); // Output: Data fetched successfully!
+};
+fetchDataAsync();
+// Function with error handling
+const fetchDataWithErrorHandling = async () => {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+};
+fetchDataWithErrorHandling();
+// Output: Data fetched successfully!
+// Output: Hello, Alice!
+// Output: 8
+// Output: 5
+// Output: 10
+// Output: Name: Alice, Age: 30
+// Output: [2, 4, 6]
+// Output: Data fetched successfully!
+// Output: Data fetched successfully!
