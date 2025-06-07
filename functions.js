@@ -28,15 +28,12 @@ console.log(greetExpression("Bob")); // Output: Hello, Bob!
 // Use Case: Dynamic assignment of functions or closures.
 // Key Features: Not hoisted.
 
-
-// console.log(personExpression("Ahmet")); // Output: ReferenceError : Cannot access 'personExpression' before initialization, 
+// console.log(personExpression("Ahmet")); // Output: ReferenceError : Cannot access 'personExpression' before initialization,
 // personExpression is not defined yet.
 const personExpression = function (name) {
-    return "Name: " + name;
+  return "Name: " + name;
 };
 console.log(personExpression("Ahmet"));
-
-
 
 // Arrow Functions
 const greetArrow = (name) => `Hello, ${name}!`;
@@ -283,3 +280,8 @@ const throttledLog = throttle(() => console.log("Throttled!"), 1000);
 // Calling the throttled function
 throttledLog();
 // Use Case: Controlling execution of expensive operations.
+
+// 11. Immediately Invoked Function Expression (IIFE)
+(function (a, b) {
+  console.log(a + b);
+})(5, 10); // Output: 15
