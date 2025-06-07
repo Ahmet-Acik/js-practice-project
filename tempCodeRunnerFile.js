@@ -17,3 +17,15 @@ console.log(sum); // Output: 21
 
 // 4. forEach Executes a function for each element.
 arr.forEach(x => console.log(x)); // Logs each element: 1, 2, 3, 4, 5, 6
+
+// 5. find / findIndex Finds the first element (or its index) matching a condition.
+const firstEven = arr.find(x => x % 2 === 0); // 2
+console.log(firstEven); // Output: 2
+const firstEvenIndex = arr.findIndex(x => x % 2 === 0); // 1
+console.log(firstEvenIndex); // Output: 1
+
+// 6. some / every Checks if some or all elements match a condition.
+const hasEven = arr.some(x => x % 2 === 0); // true
+console.log(hasEven); // Output: true
+const allEven = arr.every(x => x % 2 === 0); // false
+console.log(allEven); // Output: false
