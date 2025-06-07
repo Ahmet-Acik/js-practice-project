@@ -1,10 +1,12 @@
 // 1. Basic Syntax
 
 console.log("Test output"); // If you see this, your file is running!
+
 // Function Declaration
 function greetDeclared(name: string): string {
     return `Hello, ${name}!`;
 }
+
 console.log(greetDeclared("Alice")); // Output: Hello, Alice!
 
 // Function Expression
