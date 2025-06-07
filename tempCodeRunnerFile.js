@@ -82,3 +82,20 @@ console.log(`limit (first 3): ${JSON.stringify(limited)}`);
 const skipped = arr.slice(3);
 console.log("skip (after first 3):", skipped);
 console.log(`skip (after first 3): ${JSON.stringify(skipped)}`);
+
+// 15. join 
+const joined = arr.join(", ");
+console.log("join (with comma):", joined);
+console.log(`join (with comma): ${joined}`);
+
+// 16. reverse
+const reversed = arr.slice().reverse();
+console.log("reverse:", reversed);
+console.log(`reverse: ${JSON.stringify(reversed)}`);
+
+// 17. fill
+const filled = arr.slice();
+filled.fill(0, 2, 4);
+console.log("fill (0 from index 2 to 4):", filled);
+console.log(`fill (0 from index 2 to 4): ${JSON.stringify(filled)}`);
+
