@@ -14,3 +14,6 @@ console.log(filtered);
 // 3. reduce Reduces to a single value.
 const sum = arr.reduce((acc, x) => acc + x, 0); // 21
 console.log(sum); // Output: 21
+
+// 4. forEach Executes a function for each element.
+arr.forEach(x => console.log(x)); // Logs each element: 1, 2, 3, 4, 5, 6
